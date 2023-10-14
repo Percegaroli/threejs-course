@@ -12,12 +12,10 @@ const sizes = {
     height: 600
 }
 
-// Camera
 const camera = new PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
 scene.add(camera)
 
-// Renderer
 const renderer = new WebGLRenderer({
     canvas: document.querySelector('.webgl') as any
 })
