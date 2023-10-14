@@ -31,6 +31,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "gsap": "^3.12.2",
     "three": "^0.157.0",
     "tslib": "^2.3.0"
   }
