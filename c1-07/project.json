@@ -1,0 +1,72 @@
+{
+  "name": "c1-07",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "c1-07/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/c1-07"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "c1-07:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "c1-07:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "c1-07:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "c1-07:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "c1-07:build:development"
+        },
+        "production": {
+          "buildTarget": "c1-07:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../coverage/c1-07"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["c1-07/**/*.ts"]
+      }
+    }
+  }
+}
