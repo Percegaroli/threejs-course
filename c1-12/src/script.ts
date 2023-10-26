@@ -121,7 +121,7 @@ const material = new MeshStandardMaterial({
 const material = new MeshStandardMaterial({
     roughness: .2,
     metalness: .7,
-    envMap: envMapTexture
+    envMap: envMapTexture,
 });
 
 const ambientLight = new AmbientLight(0xffffff, .5);
